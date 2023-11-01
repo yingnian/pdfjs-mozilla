@@ -1,37 +1,29 @@
-# pdfjs-mozilla构建版本
+# pdf-mozilla
 
-#### 介绍
-pdf预览
+### 使用 mozilla 的 pdfjs 构建版本
 
-#### 软件架构
-软件架构说明
+所以不需要安装任何东西，整个构建版本的包大约在16M左右，但实际使用时，首次需要加载的资源大概在2M左右
 
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+![](/src/assets/pdf_1.png)
+![](/src/assets/pdf_2.png)
 
 
-#### 特技
+### 迁出方式
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+- 将 `public/pdfjs` 文件夹整体放到项目中
+- 前端组件位置 `src/components/pdfMoz.vue`
+- 使用参照 `src/views/HomeView.vue`
+
+
+### 需要注意的是 `src/components/pdfMoz.vue` 中
+
+```js
+data () {
+  return {
+    baseUrl: 'pdfjs/web/viewer.html?',
+    fullPath: 'pdfjs/web/viewer.html'
+  }
+},
+
+// 这里的两个路径跟随项目而定 （前面要不要加 /, 或者 /项目部署路径/ 等）
+```
