@@ -7,6 +7,20 @@
 ![](/src/assets/pdf_1.png)
 ![](/src/assets/pdf_2.png)
 
+### 功能
+```js
+props: {
+  /** pdf的完整文件路径 */
+  url: { type: String, default: '' },
+  /** 是否支持打印 */
+  print: { type: Boolean, default: false },
+  /** 是否支持保存 */
+  save: { type: Boolean, default: false },
+  /** 是否支持编辑 */
+  edit: { type: Boolean, default: false }
+},
+```
+
 
 ### 迁出方式
 
